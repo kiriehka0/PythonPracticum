@@ -1,0 +1,6 @@
+a = int(input())
+a = str(a)
+sum1 = int(a[1]) + int(a[2])
+sum2 = int(a[0]) + int(a[1])
+k = str(max(sum1, sum2)) + str(min(sum1, sum2))
+print(k)
