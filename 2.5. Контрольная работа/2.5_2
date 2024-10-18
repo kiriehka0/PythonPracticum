@@ -1,0 +1,11 @@
+a = int(input())
+b = int(input())
+k = input()
+if len(k) % 6 == 0:
+    print(a + b)
+elif len(k) % 3 == 0:
+    print(a - b)
+elif len(k) % 2 == 0:
+    print(a * b)
+else:
+    print(a // b)
