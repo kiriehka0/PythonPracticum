@@ -1,0 +1,12 @@
+n = int(input())
+cnt = 0
+b = []
+for x in range(n):
+    a = []
+    k = input()
+    while k != 'stop':
+        a.append(int(k))
+        k = input()
+    cnt = sum(a) / len(a)
+    b.append(cnt)
+print(round(sum(b), 2))
