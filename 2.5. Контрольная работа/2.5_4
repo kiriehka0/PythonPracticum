@@ -1,0 +1,11 @@
+n = int(input())
+a = []
+for x in range(n):
+    k = int(input())
+    a.append(k)
+a1 = a[::-1]
+b = []
+for x in range(len(a1) - 1):
+    if a1[x] > a1[x + 1]:
+        b.append(a1[x])
+print(min(b))
