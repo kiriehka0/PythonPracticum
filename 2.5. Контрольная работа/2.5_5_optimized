@@ -1,0 +1,13 @@
+n = int(input())
+b = []
+for x in range(n):
+    total, cnt = 0, 0
+    while True:
+        k = input()
+        if k == 'stop':
+            break
+        total += int(k)
+        cnt += 1
+    if cnt > 0:
+        b.append(total / cnt)
+print(round(sum(b), 2))
