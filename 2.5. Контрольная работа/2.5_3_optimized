@@ -1,6 +1,5 @@
 n = int(input())
 m = int(input())
-k = ((n - m) // 3)
-a = [str(i) for i in range(n, m - 1, -k)]
+a = [str(i) for i in range(n, m - 1, -((n - m) // 3))]
 print('; '.join(a))
 print('Старт!')
