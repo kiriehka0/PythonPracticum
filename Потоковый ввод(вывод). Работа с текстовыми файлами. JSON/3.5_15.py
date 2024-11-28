@@ -1,14 +1,22 @@
+import json
 from sys import stdin
 
-a = input().lower()
-a1 = False
-b = [line.strip() for line in stdin]
-for x in b:
-    with open(x, "r", encoding="UTF-8") as f:
-        f1 = f.read()
-        f1 = ' '.join(f1.lower().split())
-        if a in f1:
-            a1 = True
-            print(x)
-if a1 is False:
-    print("404. Not Found")
+a = [x.rstrip() for x in stdin]
+with open("scoring.json", "r", encoding="UTF-8") as f:
+    data = json.load(f)
+spisok = []
+for x in data:
+    b = x["points"] // len(x["tests"])
+    for y in x["tests"]:
+        spisok.append((y["pattern"], b))
+if len(a) != len(spisok):
+    print("Неверное количество выходных строк")
+else:
+    cnt = 0
+    for i in range(len(spisok)):
+        hoh = a[i]
+        hoh1 = spisok[i][0]
+        lala = spisok[i][1]
+        if hoh == hoh1:
+            cnt += lala
+    print(cnt)
